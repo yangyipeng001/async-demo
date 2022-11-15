@@ -1,7 +1,7 @@
 import effectRunnerMap from './effectRunnerMap'
 import { IO } from "./symbol";
 
-export default function process(env, iterator) {
+export default function proc(env, iterator) {
     next()
 
     function next(arg, isErr) {
