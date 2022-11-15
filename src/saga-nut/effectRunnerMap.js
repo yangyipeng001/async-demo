@@ -34,12 +34,21 @@ function runForkEffect(env, {fn, args}, cb) {
     cb()
 }
 
+function runAllEffect(env, {effects}, cb) {
+    let n = effects.length
+
+    for (let i = 0; i < n; i++) {
+        proc(env, effects[i])
+    }
+}
+
 
 const effectRunnerMap = {
     [effectTypes.TAKE]: runTakeEffect,
     [effectTypes.PUT]: runPutEffect,
     [effectTypes.CALL]: runCallEffect,
     [effectTypes.FORK]: runForkEffect,
+    [effectTypes.ALL]: runAllEffect,
 }
 
 export default effectRunnerMap

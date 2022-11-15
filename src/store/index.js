@@ -6,8 +6,8 @@ import { loginReducer } from "./loginReducer"
 import createSagaMiddleware from '../saga-nut'
 
 // ! 1.创建要运行的saga
-import loginSaga from "../action/loginSaga"
-// import rootSaga from "../action/rootSaga"
+// import loginSaga from "../action/loginSaga"
+import rootSaga from "../action/rootSaga"
 
 // ! 2.创建saga中间件
 const sagaMiddleware = createSagaMiddleware()
@@ -21,7 +21,7 @@ const store = createStore(
 )
 
 // ! 4.运行saga
-sagaMiddleware.run(loginSaga)
-// sagaMiddleware.run(rootSaga)
+// sagaMiddleware.run(loginSaga)
+sagaMiddleware.run(rootSaga)
 
 export default store
